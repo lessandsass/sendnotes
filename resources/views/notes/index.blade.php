@@ -16,7 +16,7 @@
 
                     @foreach ($notes as $note)
                         <li>
-                            <p>{{ $note->title }}</p>
+                            <span>{{ $note->title }}</span>
                         </li>
                     @endforeach
 
