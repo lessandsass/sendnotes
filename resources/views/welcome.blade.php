@@ -17,7 +17,7 @@
 
     <body class="antialiased font-sans">
 
-        <div class="pr-9 bg-gray-100">
+        <div class="pr-9 bg-gray-100 pt-4">
             @if (Route::has('login'))
                 <livewire:welcome.navigation />
             @endif
