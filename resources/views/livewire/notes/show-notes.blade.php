@@ -18,8 +18,20 @@ new class extends Component {
 
 <div>
 
-    @foreach ($notes as $note)
-        {{ $note->title }}
-    @endforeach
+    <div class="space-y-2">
+        @foreach ($notes as $note)
+            <x-card wire:key='{{ $note->id }}'>
+                <div class="flex justify-between">
+                    <a href="#" class="text-xl font-bold hover:underline hover:text-blue-500">
+                        {{ $note->title }}
+                    </a>
+
+                    <div class="text-xs text-gray-500">
+                        {{ \Carbon\Carbon::parse($note->send_date)->format('d-M-Y') }}
+                    </div>
+                </div>
+            </x-card>
+        @endforeach
+    </div>
 
 </div>
