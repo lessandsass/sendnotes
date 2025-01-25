@@ -54,7 +54,7 @@ new class extends Component {
                         </p>
 
                         <div>
-                            <x-button icon="eye" />
+                            <x-button icon="eye" class="bg-green-600 hover:bg-green-700" />
                             <x-button icon="trash" />
                         </div>
                     </div>
