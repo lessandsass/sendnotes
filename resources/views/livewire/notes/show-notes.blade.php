@@ -24,7 +24,14 @@ new class extends Component {
             <div class="text-center">
                 <p class="text-xl font-bold">No notes yet</p>
                 <p class="text-sm">Let's create your first note to send.</p>
-                <x-button icon="plus" class="bg-green-600 hover:bg-green-700 mt-3">Create note</x-button>
+                <x-button
+                    href="{{ route('notes.create') }}"
+                    wire:navigate
+                    icon="plus"
+                    class="bg-green-600 hover:bg-green-700 mt-3"
+                >
+                    Create note
+                </x-button>
             </div>
         @else
             <div class="grid grid-cols-2 gap-4 mt-12">
