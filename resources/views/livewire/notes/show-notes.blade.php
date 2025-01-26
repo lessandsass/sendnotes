@@ -44,14 +44,18 @@ new class extends Component {
                 Create note
             </x-button>
 
-            <div class="grid grid-cols-2 gap-4 mt-12">
+            <div class="grid grid-cols-3 gap-4 mt-12">
             @foreach ($notes as $note)
                 <x-card wire:key='{{ $note->id }}'>
 
                     <div class="flex justify-between">
-                        <a href="#" class="text-xl font-bold hover:underline hover:text-blue-500">
-                            {{ $note->title }}
-                        </a>
+
+                        <div>
+                            <a href="#" class="text-xl font-bold hover:underline hover:text-blue-500">
+                                {{ $note->title }}
+                            </a>
+                            <p>{{ Str::limit($note->body, 30) }}</p>
+                        </div>
 
                         <div class="text-xs text-gray-500">
                             {{ \Carbon\Carbon::parse($note->send_date)->format('d-M-Y') }}
@@ -79,7 +83,7 @@ new class extends Component {
                         </p>
 
                         <div>
-                            <x-button icon="eye" class="bg-green-600 hover:bg-green-700" />
+                            <x-button icon="eye" positive />
                             <x-button icon="trash" />
                         </div>
                     </div>

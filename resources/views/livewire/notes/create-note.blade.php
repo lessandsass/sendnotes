@@ -26,7 +26,6 @@ new class extends Component {
         ]);
 
         redirect(route('notes.index'));
-        $this->reset('noteTitle', 'noteBody', 'noteRecipient', 'noteSendDate');
     }
 
 };
