@@ -34,6 +34,16 @@ new class extends Component {
                 </x-button>
             </div>
         @else
+
+            <x-button
+                href="{{ route('notes.create') }}"
+                wire:navigate
+                icon="plus"
+                class="bg-green-600 hover:bg-green-700 mb-4"
+            >
+                Create note
+            </x-button>
+
             <div class="grid grid-cols-2 gap-4 mt-12">
             @foreach ($notes as $note)
                 <x-card wire:key='{{ $note->id }}'>
