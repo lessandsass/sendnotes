@@ -10,7 +10,23 @@ new class extends Component {
 
     public function submit()
     {
-        dd($this->noteTitle, $this->noteBody, $this->noteRecipient, $this->noteSendDate);
+        $validated = $this->validate([
+            'noteTitle' => ['required', 'string', 'max:255', 'min:3'],
+            'noteBody' => ['required', 'string', 'max:255', 'min:10'],
+            'noteRecipient' => ['required', 'email', 'max:255'],
+            'noteSendDate' => ['required', 'date'],
+        ]);
+
+        auth()->user()->notes()->create([
+            'title' => $validated['noteTitle'],
+            'body' => $validated['noteBody'],
+            'recipient' => $validated['noteRecipient'],
+            'send_date' => $validated['noteSendDate'],
+            'is_published' => false
+        ]);
+
+        redirect(route('notes.index'));
+        $this->reset('noteTitle', 'noteBody', 'noteRecipient', 'noteSendDate');
     }
 
 };
