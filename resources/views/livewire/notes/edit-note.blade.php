@@ -11,6 +11,7 @@ class extends Component {
 
     public function mount(Note $note): void
     {
+        $this->authorize('update', $note);
         // $this->note = $note;
         $this->fill($note);
     }
