@@ -11,8 +11,8 @@ class extends Component {
 
     public function mount(Note $note): void
     {
-        $this->note = $note;
-        // $this->fill($note);
+        // $this->note = $note;
+        $this->fill($note);
     }
 
 }; ?>
@@ -21,4 +21,5 @@ class extends Component {
     Edit Note
     <h1>{{ $this->note }}</h1>
     <h1>{{ $this->note->title }}</h1>
+    <h1>{{ $note->body }}</h1>
 </div>
