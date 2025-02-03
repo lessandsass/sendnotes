@@ -60,7 +60,7 @@ new class extends Component {
 
                         <div>
                             <a
-                                href="{{ route('notes.edit-note', $note) }}"
+                                href="{{ route('notes.edit', $note) }}"
                                 class="text-xl font-bold hover:underline hover:text-blue-500"
                                 wire:navigate
                             >
