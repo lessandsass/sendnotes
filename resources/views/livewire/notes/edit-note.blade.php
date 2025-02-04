@@ -37,7 +37,7 @@ class extends Component {
             'noteIsPublished' => ['required', 'boolean'],
         ]);
 
-        $this->note->update([
+        auth()->user()->notes()->update([
             'title' => $validated['noteTitle'],
             'body' => $validated['noteBody'],
             'recipient' => $validated['noteRecipient'],
@@ -45,7 +45,7 @@ class extends Component {
             'is_published' => $validated['noteIsPublished'],
         ]);
 
-        // redirect(route('notes.index'));
+        redirect(route('notes.index'));
     }
 
 };
@@ -60,7 +60,7 @@ class extends Component {
 
 <div class="py-12">
     <div class="max-w-2xl mx-auto space-y-4 sm:px-6 lg:px-8">
-        <form action="" wire:submit="saveNote">
+        <form wire:submit="saveNote">
             <x-input icon="pencil" wire:model="noteTitle" label="Note Title" class="mt-5" placeholder="It's been a great day." />
 
             <x-textarea wire:model="noteBody" label="Note Body" class="mt-5" rows="3" cols="auto" placeholder="Say additional things about your note." />
