@@ -18,9 +18,18 @@ class extends Component {
 
 }; ?>
 
-<div>
-    Edit Note
-    <h1>{{ $this->note }}</h1>
-    <h1>{{ $this->note->title }}</h1>
-    <h1>{{ $note->body }}</h1>
+<x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('Edit Notes') }}
+    </h2>
+</x-slot>
+
+<div class="py-12">
+    <div class="max-w-2xl mx-auto space-y-4 sm:px-6 lg:px-8">
+        <form action="">
+
+            My form
+
+        </form>
+    </div>
 </div>
