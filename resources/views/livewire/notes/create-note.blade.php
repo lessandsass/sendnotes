@@ -3,7 +3,6 @@
 use Livewire\Volt\Component;
 
 new class extends Component {
-
     public $noteTitle;
     public $noteBody;
     public $noteRecipient;
@@ -35,7 +34,7 @@ new class extends Component {
 
 <div>
     <div class="w-1/2 mx-auto">
-        <form action="" wire:submit="submit">
+        <form wire:submit="submit">
             <x-input icon="pencil" wire:model="noteTitle" label="Note Title" class="mt-5" placeholder="It's been a great day." />
 
             <x-textarea wire:model="noteBody" label="Note Body" class="mt-5" rows="3" cols="auto" placeholder="Say additional things about your note." />
