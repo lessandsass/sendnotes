@@ -38,11 +38,11 @@ class extends Component {
         ]);
 
         auth()->user()->notes()->update([
-            'title' => $validated['noteTitle'],
-            'body' => $validated['noteBody'],
-            'recipient' => $validated['noteRecipient'],
-            'send_date' => $validated['noteSendDate'],
-            'is_published' => $validated['noteIsPublished'],
+            'title' => $this->noteTitle,
+            'body' => $this->noteBody,
+            'recipient' => $this->noteRecipient,
+            'send_date' => $this->noteSendDate,
+            'is_published' => $this->noteIsPublished
         ]);
 
         redirect(route('notes.index'));
