@@ -34,10 +34,9 @@ class extends Component {
             'noteBody' => ['required', 'string', 'max:255', 'min:10'],
             'noteRecipient' => ['required', 'email', 'max:255'],
             'noteSendDate' => ['required', 'date'],
-            'noteIsPublished' => ['required', 'boolean'],
         ]);
 
-        auth()->user()->notes()->where('id', $this->note->id)->update([
+        $this->note->update([
             'title' => $this->noteTitle,
             'body' => $this->noteBody,
             'recipient' => $this->noteRecipient,
@@ -45,7 +44,7 @@ class extends Component {
             'is_published' => $this->noteIsPublished
         ]);
 
-        redirect(route('notes.index'));
+
     }
 
 };
@@ -71,7 +70,11 @@ class extends Component {
 
             <x-checkbox wire:model="noteIsPublished" label="Publish Note" class="mt-5" />
 
-            <x-button type="submit" class="mt-5" spinner>Save Note</x-button>
+            <x-button type="submit" class="mt-5" spinner="saveNote">Schedule Note</x-button>
+
+            <x-button href="{{ route('notes.index') }}" class="mt-5" flat negative>Cancel</x-button>
+
+
         </form>
     </div>
 </div>

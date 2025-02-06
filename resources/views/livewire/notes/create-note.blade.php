@@ -43,7 +43,9 @@ new class extends Component {
 
             <x-input icon="calendar" wire:model="noteSendDate" type="date" label="Note Send Date" class="mt-5" />
 
-            <x-button type="submit" class="mt-5" spinner>Schedule Note</x-button>
+            <x-button type="submit" class="mt-5" spinner="saveNote">Schedule Note</x-button>
+
+            <x-button href="{{ route('notes.index') }}" class="mt-5" flat negative>Cancel</x-button>
         </form>
     </div>
 </div>
