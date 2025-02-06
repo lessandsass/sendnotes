@@ -64,7 +64,7 @@ new class extends Component {
                                 class="text-xl font-bold hover:underline hover:text-blue-500"
                                 wire:navigate
                             >
-                                {{ $note->title }}
+                                {{ Str::limit($note->title, 18) }}
                             </a>
                             <p>{{ Str::limit($note->body, 30) }}</p>
                         </div>
@@ -91,7 +91,7 @@ new class extends Component {
                             class="text-xs text-gray-500"
                         >
                             Recipient:
-                            <span class="font-semibold">{{ $note->recipient }}</span>
+                            <span class="font-semibold block">{{ Str::limit($note->recipient, 20) }}</span>
                         </p>
 
                         <div>

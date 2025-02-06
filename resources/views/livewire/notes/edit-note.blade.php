@@ -15,7 +15,7 @@ class extends Component {
     public $noteSendDate;
     public $noteIsPublished;
 
-    public function mount(Note $note): void
+    public function mount(Note $note)
     {
         $this->authorize('update', $note);
         $this->fill($note);
@@ -44,6 +44,7 @@ class extends Component {
             'is_published' => $this->noteIsPublished
         ]);
 
+        redirect(route('notes.index'));
         $this->dispatch('saveNote', $this->note);
 
     }
