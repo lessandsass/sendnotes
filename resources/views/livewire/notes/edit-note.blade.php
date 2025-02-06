@@ -44,6 +44,7 @@ class extends Component {
             'is_published' => $this->noteIsPublished
         ]);
 
+        $this->dispatch('saveNote', $this->note);
 
     }
 
@@ -74,6 +75,7 @@ class extends Component {
 
             <x-button href="{{ route('notes.index') }}" class="mt-5" flat negative>Cancel</x-button>
 
+            <x-action-message on="note-saved" positive flat />
 
         </form>
     </div>
