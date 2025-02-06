@@ -37,7 +37,7 @@ class extends Component {
             'noteIsPublished' => ['required', 'boolean'],
         ]);
 
-        auth()->user()->notes()->update([
+        auth()->user()->notes()->where('id', $this->note->id)->update([
             'title' => $this->noteTitle,
             'body' => $this->noteBody,
             'recipient' => $this->noteRecipient,
